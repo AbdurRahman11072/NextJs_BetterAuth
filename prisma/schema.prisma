@@ -13,9 +13,9 @@ datasource db {
 }
 
 enum Role {
-  USER
-  PROVIDER
-  ADMIN
+  user
+  provider
+  admin
 }
 
 model User {
@@ -26,11 +26,11 @@ model User {
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  role          Role      @default(USER)
+  role          Role      @default(user)
   banned        Boolean?  @default(false)
   banReason     String?
   banExpires    DateTime?
-  restaurantId  String
+  restaurantId  String?
   sessions      Session[]
   accounts      Account[]
 
